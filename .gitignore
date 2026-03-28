@@ -1,0 +1,38 @@
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Logs
+backend/writable/logs/*.log
+backend/writable/debugbar/*.json
+backend/writable/debugbar/*.zip
+
+# Temporary
+backend/writable/cache/*
+backend/writable/session/*
+backend/writable/uploads/*
+backend/writable/database.sqlite
+!backend/writable/cache/index.html
+!backend/writable/logs/index.html
+!backend/writable/session/index.html
+!backend/writable/uploads/index.html
+
+# Node
+node_modules/
+dist/
+build/
+.env
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Automation
+start_authoryn.vbs
+AUTO_SETUP.php
+repair_backend.php
+fix_configs*
+test_login.php
+seed_user.php

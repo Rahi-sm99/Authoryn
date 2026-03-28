@@ -1,0 +1,52 @@
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  background: var(--glass);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+}
+
+.table th {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted-foreground);
+  border-bottom: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.table td {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.9375rem;
+  border-bottom: 1px solid var(--glass-border);
+  color: var(--foreground);
+  transition: all 0.2s ease;
+}
+
+.table tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.table tr:hover td {
+  color: var(--primary);
+  transform: scale(1.002);
+}
+
+/* Skeleton loader for tables */
+.skeleton {
+  width: 100%;
+  height: 1.5rem;
+  background: var(--muted);
+  border-radius: 4px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
