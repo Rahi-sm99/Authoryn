@@ -1,0 +1,32 @@
+{
+  "version": 2,
+  "name": "authoryn-platform",
+  "builds": [
+    {
+      "src": "frontend/package.json",
+      "use": "@vercel/static-build",
+      "config": { "distDir": "dist" }
+    },
+    {
+      "src": "backend/public/index.php",
+      "use": "vercel-php@0.6.1",
+      "config": { "maxExecutionTime": 60 }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/public/index.php",
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,POST,PUT,DELETE,OPTIONS",
+        "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Authorization"
+      }
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/$1",
+      "check": true
+    }
+  ]
+}
